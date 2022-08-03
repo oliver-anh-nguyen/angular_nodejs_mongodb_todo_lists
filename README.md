@@ -3,6 +3,10 @@ Fullstack: angular + nodejs + mongodb
 
 To run demo
 
+Install MongoDB Compass
+
+Add file json: db/json
+
 cd ../backend: npm install
 
-cd ../todoApp/todo-app: npm start
+cd ../client/todo-app : npm start
