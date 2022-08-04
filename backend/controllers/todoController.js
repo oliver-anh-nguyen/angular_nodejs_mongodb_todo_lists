@@ -1,4 +1,4 @@
-const Todo = require("./todoModel")
+const Todo = require("../models/todoModel")
 
 async function addTodo(req, res ,next) {
     try {

@@ -8,8 +8,13 @@ const app = express();
 
 app.use(morgan('dev'));
 app.use(cors());
+app.use(express.json());
+app.use('/todos', require('./routers/todoRouter'));
+app.use('/users', require('./routers/userRouter'));
 
-app.use('/todos', require('./todoRouter'));
+app.use((req, res, next) => {
+    next(new Error('Route not found'));
+})
 
 app.use((err, req, res, next) => {
     res.status(500).json({error: err});

@@ -9,10 +9,6 @@ _
 /client/todo-app/src/app/list-todos.component.ts,b/d/bd987d374b24529a832108dbb2ec72af38b82a35
 c
 3client/todo-app/src/app/set-background.directive.ts,2/d/2de0c1cc8e34b4f828b14da3805a5cfc3e67046c
-U
-%client/todo-app/src/app/app.module.ts,b/1/b1bb380eff2c03f81e4211c5c86e157cf9463ee7
-X
-(client/todo-app/src/app/app.component.ts,f/5/f562368bad913f3287849a0c718e5fb3caf03b97
 X
 (client/todo-app/src/app/TodoInterface.ts,2/2/22e99b5de3d197c6baf1da5d6ca742fe827f067f
 ]
