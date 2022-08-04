@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {TodosService} from "./todos.service";
 import {Todo} from "./TodoInterface";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-list-todos',
   template: `
+    <button (click)="addTodo()">Add New Todo</button>
     <p *ngFor="let todo of list_of_todos" [ngClass]="{cross: todo.completed}">
       <app-todo [data]="todo" [actions]="{deleteTodo: deleteTodo.bind(this), updateCompleted: updateCompleted.bind(this)}"></app-todo>
     </p>
@@ -16,7 +18,7 @@ import {Todo} from "./TodoInterface";
 })
 export class ListTodosComponent implements OnInit {
   list_of_todos: Array<Todo> = [];
-  constructor(private todoService: TodosService) {
+  constructor(private todoService: TodosService, private router: Router) {
     this.todoService.getTodos().subscribe(data => {
       this.list_of_todos = data;
     })
@@ -42,4 +44,7 @@ export class ListTodosComponent implements OnInit {
     })
   }
 
+  addTodo() {
+    this.router.navigate(['/', 'todos', 'add']);
+  }
 }

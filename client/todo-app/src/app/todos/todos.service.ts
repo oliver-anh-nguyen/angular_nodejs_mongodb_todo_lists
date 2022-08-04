@@ -24,4 +24,8 @@ export class TodosService {
   toggleTodoById(todo_id: string, completed: boolean) {
     return this.http.patch('http://localhost:3000/todos/' + todo_id + '?completed=' + completed, {});
   }
+
+  addNewTodo(todo: Todo) {
+    return this.http.post('http://localhost:3000/todos', todo);
+  }
 }

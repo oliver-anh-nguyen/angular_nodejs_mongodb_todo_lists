@@ -6,6 +6,7 @@ import {SetBackgroundDirective} from "./set-background.directive";
 import {RouterModule} from "@angular/router";
 import { AddComponent } from './add.component';
 import { EditComponent } from './edit.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -17,15 +18,16 @@ import { EditComponent } from './edit.component';
     AddComponent,
     EditComponent
   ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(
-      [
-        { path: '', component: ListTodosComponent},
-        { path: 'add', component: AddComponent},
-        { path: 'edit', component: EditComponent},
-      ]
-    )
-  ]
+    imports: [
+        CommonModule,
+        RouterModule.forChild(
+            [
+                {path: '', component: ListTodosComponent},
+                {path: 'add', component: AddComponent},
+                {path: 'edit', component: EditComponent},
+            ]
+        ),
+        ReactiveFormsModule
+    ]
 })
 export class TodosModule { }
