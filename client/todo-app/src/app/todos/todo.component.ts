@@ -4,8 +4,9 @@ import {Todo} from "./TodoInterface";
 @Component({
   selector: 'app-todo',
   template: `
-    <div [setBackground]="todo.completed? 'grey' : ''">{{todo.title}} - {{todo.description}} - {{todo.timestamp | date:'long'}}</div>
+    <div [setBackground]="todo.completed? 'grey' : ''">{{todo.title}} - {{todo.description}} - {{todo.timestamp | date:'short'}}</div>
     <button (click)="actions.deleteTodo($any(todo)._id)">Delete</button>
+    <button (click)="actions.updateTodo(todo)">Update</button>
     <button (click)="actions.updateCompleted($any(todo)._id, true)" *ngIf="!todo.completed">Mark As Completed</button>
     <button (click)="actions.updateCompleted($any(todo)._id, false)" *ngIf="todo.completed">Mark InCompleted</button>
   `,

@@ -11,7 +11,7 @@ async function addTodo(req, res ,next) {
 
 async function getTodos(req, res) {
     try {
-        const results = await Todo.find({'user.user_id': req.user.user_id});
+        const results = await Todo.find({'user.user_id': req.user.user_id} , {description: 0});
         res.json(results);
     } catch (error) {
         res.json(error);
@@ -39,7 +39,7 @@ async function deleteTodoById(req, res) {
 async function updateTodoById(req, res) {
     try {
         const results = await Todo.updateOne({_id: req.params.todo_id},
-            {$set: req.body});
+            {$set: {...req.body}});
         res.json(results);
     } catch (error) {
         res.json(error);

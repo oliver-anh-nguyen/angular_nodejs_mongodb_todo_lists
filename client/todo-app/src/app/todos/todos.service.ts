@@ -28,4 +28,8 @@ export class TodosService {
   addNewTodo(todo: Todo) {
     return this.http.post('http://localhost:3000/todos', todo);
   }
+
+  updateTodo(todo: Todo) {
+    return this.http.put('http://localhost:3000/todos/' + todo._id, todo);
+  }
 }

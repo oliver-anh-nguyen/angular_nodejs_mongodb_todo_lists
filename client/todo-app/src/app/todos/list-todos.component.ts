@@ -8,7 +8,7 @@ import {Router} from "@angular/router";
   template: `
     <button (click)="addTodo()">Add New Todo</button>
     <p *ngFor="let todo of list_of_todos" [ngClass]="{cross: todo.completed}">
-      <app-todo [data]="todo" [actions]="{deleteTodo: deleteTodo.bind(this), updateCompleted: updateCompleted.bind(this)}"></app-todo>
+      <app-todo [data]="todo" [actions]="{deleteTodo: deleteTodo.bind(this), updateCompleted: updateCompleted.bind(this), updateTodo: updateTodo.bind(this)}"></app-todo>
     </p>
   `,
   styles: [`
@@ -46,5 +46,9 @@ export class ListTodosComponent implements OnInit {
 
   addTodo() {
     this.router.navigate(['/', 'todos', 'add']);
+  }
+
+  updateTodo(todo: Todo) {
+    this.router.navigate(['/', 'todos', 'edit', todo._id], {state: todo})
   }
 }

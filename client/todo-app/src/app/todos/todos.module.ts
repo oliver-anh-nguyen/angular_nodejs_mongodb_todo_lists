@@ -24,7 +24,7 @@ import {ReactiveFormsModule} from "@angular/forms";
             [
                 {path: '', component: ListTodosComponent},
                 {path: 'add', component: AddComponent},
-                {path: 'edit', component: EditComponent},
+                {path: 'edit/:todo_id', component: EditComponent},
             ]
         ),
         ReactiveFormsModule
