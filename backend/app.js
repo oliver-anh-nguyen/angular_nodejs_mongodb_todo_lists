@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
+const checkToken = require('./middlewares/checkToken')
 mongoose.connect('mongodb://localhost:27017/todo', {useNewUrlParser: true});
 
 const app = express();
@@ -9,7 +10,7 @@ const app = express();
 app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());
-app.use('/todos', require('./routers/todoRouter'));
+app.use('/todos', checkToken, require('./routers/todoRouter'));
 app.use('/users', require('./routers/userRouter'));
 
 app.use((req, res, next) => {

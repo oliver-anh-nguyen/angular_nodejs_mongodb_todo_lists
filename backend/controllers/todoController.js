@@ -11,7 +11,7 @@ async function addTodo(req, res ,next) {
 
 async function getTodos(req, res) {
     try {
-        const results = await Todo.find();
+        const results = await Todo.find({'user.user_id': req.user.user_id});
         res.json(results);
     } catch (error) {
         res.json(error);
@@ -20,7 +20,7 @@ async function getTodos(req, res) {
 
 async function getTodoById(req, res) {
     try {
-        const results = await Todo.findById({_id: req.params.todo_id});
+        const results = await Todo.findById(req.params.todo_id);
         res.json(results);
     } catch (error) {
         res.json(error);

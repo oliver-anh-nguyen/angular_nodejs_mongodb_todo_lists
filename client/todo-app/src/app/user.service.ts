@@ -32,4 +32,9 @@ export class UserService {
       this.userState$.next(JSON.parse(userState));
     }
   }
+
+  logout() {
+    this.userState$.next({token: ''});
+    localStorage.clear();
+  }
 }
