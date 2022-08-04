@@ -28,7 +28,5 @@ M
 backend/routers/userRouter.js,5/d/5db7500473db3c048c6a0ea06a1e71eff55c20ae
 V
 &backend/controllers/loginController.js,3/5/355a6062501106df488a85338a6750839ae9b518
-X
-(client/todo-app/src/app/app.component.ts,f/5/f562368bad913f3287849a0c718e5fb3caf03b97
 ^
 .client/todo-app/src/app/todos/TodoInterface.ts,3/e/3ea0ce6587b08917b3a0b30852ec60829de72cac

@@ -6,14 +6,46 @@ import {Router} from "@angular/router";
 @Component({
   selector: 'app-login',
   template: `
-    <p>Login Views</p>
-    <form [formGroup]="loginForm" (ngSubmit)="login()">
-      <input type="text" placeholder="email" formControlName="email">
-      <input type="text" placeholder="password" formControlName="password">
-      <button type="submit">Login</button>
-    </form>
+    <mat-card>
+      <mat-card-title>User Login</mat-card-title>
+      <mat-card-content>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" formControlName="email">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" placeholder="Password" formControlName="password">
+          </mat-form-field>
+          <button mat-raised-button color="primary" type="submit">Login</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
   `,
-  styles: [
+  styles: [`
+    .ng-star-inserted {
+      width: 100%;
+    }
+    .mat-card {
+      margin-top: 100px;
+      width: 300px;
+      display: block;
+      margin-left:auto;
+      margin-right:auto;
+      vertical-align:middle;
+    }
+    .mat-card-title {
+      text-align: center;
+    }
+
+    .mat-raised-button {
+      width:30%;
+      margin-left:35%;
+      margin-right:35%;
+    }
+  `
   ]
 })
 export class LoginComponent implements OnInit {

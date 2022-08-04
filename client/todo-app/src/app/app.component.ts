@@ -6,11 +6,22 @@ import {Subscription} from "rxjs";
 @Component({
   selector: 'app-root',
   template: `
+    <p>
+      <mat-toolbar color="primary">
+        <span>Todos List</span>
+      </mat-toolbar>
+    </p>
     <button (click)="logout()" *ngIf="isLoggedIn">Logout</button>
     <p *ngIf="isLoggedIn">welcome {{username}}</p>
-    <h1>Todos App</h1>
     <router-outlet></router-outlet>
-  `
+  `,
+  styles: [
+    `
+      .example-spacer {
+        flex: 1 1 auto;
+      }
+    `
+  ]
 })
 export class AppComponent implements OnDestroy {
   isLoggedIn: boolean = false;
