@@ -14,7 +14,7 @@ export class UserService {
   }
 
   login(email: string, password: string) {
-    return this.http.post<{token: string}>('http://localhost:3000/users/login', {email, password});
+    return this.http.post<{token: string}>('https://mwa-todos-list.herokuapp.com/users/login', {email, password});
   }
 
   getUserState(): User | null {
