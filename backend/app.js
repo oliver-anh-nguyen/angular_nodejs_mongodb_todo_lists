@@ -21,4 +21,4 @@ app.use((err, req, res, next) => {
     res.status(500).json({error: err});
 })
 
-app.listen(3000, () => console.log('Listen on port 3000'));
+app.listen(process.env.PORT || 5000)
