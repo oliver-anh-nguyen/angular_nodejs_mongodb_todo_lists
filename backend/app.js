@@ -3,7 +3,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const checkToken = require('./middlewares/checkToken')
-mongoose.connect('mongodb://localhost:27017/todo', {useNewUrlParser: true});
+//mongoose.connect('mongodb://localhost:27017/todo', {useNewUrlParser: true});
 
 const app = express();
 
