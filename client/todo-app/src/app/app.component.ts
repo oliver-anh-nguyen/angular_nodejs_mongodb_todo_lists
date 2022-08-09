@@ -13,10 +13,22 @@ import {Subscription} from "rxjs";
     </p>
     <button (click)="logout()" *ngIf="isLoggedIn">Logout</button>
     <p *ngIf="isLoggedIn">welcome {{username}}</p>
+    <div>
+      <a href="https://www.facebook.com">
+        <img class="social-image" src="assets/instagram.png"/>
+      </a>
+      <a href="https://www.twitter.com">
+        <img class="social-image" src="assets/images/linkedin.png"/>
+      </a>
+    </div>
     <router-outlet></router-outlet>
   `,
   styles: [
     `
+      .social-image {
+        width: 40px;
+        height: 40px;
+      }
       .example-spacer {
         flex: 1 1 auto;
       }
