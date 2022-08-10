@@ -24,10 +24,6 @@ U
 %backend/controllers/todoController.js,b/e/be558239181fc5d3882f0248f5c7432b7a2d772c
 ]
 -client/todo-app/src/app/todos/todos.module.ts,8/1/814877559e881a9f8744ada846b950fd8eef172e
-L
-client/todo-app/package.json,5/c/5c9e1ca6464aa1019bb0a984f47b2c211534c082
-L
-client/todo-app/angular.json,4/5/45593053cee38f3df8cac9af387a14279d191d10
 _
 /client/todo-app/src/app/todos/todo.component.ts,e/7/e773089c06e7a3878a91ce5233face967c9cfa57
 >
