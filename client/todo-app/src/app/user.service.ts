@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject} from "rxjs";
 import jwtDecode from "jwt-decode";
 import {User} from "./userInterface";
+import { environment } from "src/environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,8 @@ export class UserService {
   }
 
   login(email: string, password: string) {
-    return this.http.post<{token: string}>('https://mwa-todos-list.herokuapp.com/users/login', {email, password});
+    let url = environment.baseUrl + 'users/login';
+    return this.http.post<{token: string}>(url, {email, password});
   }
 
   getUserState(): User | null {

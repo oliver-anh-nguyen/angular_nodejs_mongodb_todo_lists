@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Todo} from "./TodoInterface";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -10,26 +11,32 @@ export class TodosService {
   constructor(private http: HttpClient) { }
 
   getTodos() {
-    return this.http.get<Array<Todo>>('http://localhost:3000/todos');
+    let url = environment.baseUrl + 'todos';
+    return this.http.get<Array<Todo>>(url);
   }
 
   getTodoById(todo_id: string) {
-    return this.http.get<Todo>('http://localhost:3000/todos/' + todo_id);
+    let url = environment.baseUrl + 'todos/';
+    return this.http.get<Todo>(url + todo_id);
   }
 
   deleteTodoById(todo_id: string) {
-    return this.http.delete('http://localhost:3000/todos/'+ todo_id);
+    let url = environment.baseUrl + 'todos/';
+    return this.http.delete(url+ todo_id);
   }
 
   toggleTodoById(todo_id: string, completed: boolean) {
-    return this.http.patch('http://localhost:3000/todos/' + todo_id + '?completed=' + completed, {});
+    let url = environment.baseUrl + 'todos/';
+    return this.http.patch(url + todo_id + '?completed=' + completed, {});
   }
 
   addNewTodo(todo: Todo) {
-    return this.http.post('http://localhost:3000/todos', todo);
+    let url = environment.baseUrl + 'todos';
+    return this.http.post(url, todo);
   }
 
   updateTodo(todo: Todo) {
-    return this.http.put('http://localhost:3000/todos/' + todo._id, todo);
+    let url = environment.baseUrl + 'todos/';
+    return this.http.put(url + todo._id, todo);
   }
 }
